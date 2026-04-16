@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var textMessage = "I am doing"
     var body: some View {
 //        VStack {
 //            Image(systemName: "globe")
@@ -17,11 +18,17 @@ struct ContentView: View {
 //        }
         
         VStack {
-            Text("What is football to you?")
+            Text(textMessage)
                 .font(.title)
                 .fontWeight(.medium)
                 .foregroundStyle(.green)
-            HStack {
+            Button("Click Me") {
+                textMessage = "Awsome, I did it"
+                    
+            }
+            .fontWeight(.bold)
+            
+        HStack {
                 Image(systemName: "figure.american.football")
                     .resizable()
                     .scaledToFit()
@@ -34,6 +41,7 @@ struct ContentView: View {
                     .resizable()
                     .scaledToFit()
                     .foregroundStyle(.purple)
+            
             }
             
 
